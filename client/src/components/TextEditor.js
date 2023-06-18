@@ -23,7 +23,6 @@ function TextEditor() {
 
     socket.on("incomingChanges", (textChanges) => {
       setInputValue(textChanges);
-      console.log("textChanges", textChanges);
     });
   }, [socket]);
 

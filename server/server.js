@@ -7,7 +7,6 @@ const io = require("socket.io")(3001, {
 
 io.on("connection", (socket) => {
   socket.on("changes", (textChanges) => {
-    console.log("textChanges", textChanges);
     socket.broadcast.emit("incomingChanges", textChanges);
   });
 });
