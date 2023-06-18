@@ -1,16 +1,42 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { io } from "socket.io-client";
+import { Input } from "antd";
+
+const { TextArea } = Input;
 
 function TextEditor() {
+  const [socket, setSocket] = useState(null);
+  const [inputValue, setInputValue] = useState("")
+
+
   useEffect(() => {
-    const socket = io("http://localhost:3001");
+    const _socket = io("http://localhost:3001");
+    setSocket(_socket);
 
     return () => {
-      socket.disconnect();
+      _socket.disconnect();
     };
   }, []);
-  return <div>TextEditor</div>;
+
+  useEffect(() => {
+    if (socket == null) return;
+
+    socket.on("incomingChanges", (textChanges) => {
+      setInputValue(textChanges);
+      console.log("textChanges", textChanges);
+    });
+  }, [socket]);
+
+  const emitChanges = (e) => {
+    setInputValue(e.target.value);
+    socket.emit("changes", e.target.value);
+  };
+
+  return (
+    <div>
+      <TextArea rows={4} onChange={emitChanges} value={inputValue} />
+    </div>
+  );
 }
 
 export default TextEditor;
- 
