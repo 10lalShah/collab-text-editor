@@ -76,3 +76,9 @@ NestJs for building the backend which uses TypeScript by default, adding type sa
 For frontend React Application can be built using cra or the new recommended method of using the NextJS cli. NextJs allows the Server Side Rendering, Static Site Generation, routing out of the box, SEO optimization, and a opnionated architecture for the application. For Formatting Rich text Editors such as QuillJS, Monaco Editor, TinyMCE etc. For a modern design and not boring design Material UI could be skipped for Ant Design with good documentation and abundance of components. For state management Zustand is a modern state management which has very simple api to use, as opposed to redux. React-query can be integrated together with zustand for creating clean and consistent hooks for fetching data from the server. React-Query also provides hooks to get the state of the data along with caching mechanisms. 
 
 This would be a breif overview of the technologies that could be used for a complex solution. 
+
+## Demo
+
+
+https://github.com/10lalShah/collab-text-editor/assets/31349820/aa129d7d-f2b9-4beb-b669-de32138bf3f2
+
