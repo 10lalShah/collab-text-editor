@@ -1,5 +1,11 @@
+import TextEditor from "./components/TextEditor";
+
 function App() {
-  return <div className="App">Hello Awesome Collaborative tool</div>;
+  return (
+    <div className="App">
+      <TextEditor />
+    </div>
+  );
 }
 
 export default App;
